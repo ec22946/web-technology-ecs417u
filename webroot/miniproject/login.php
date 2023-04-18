@@ -47,6 +47,8 @@
 			if ($_SERVER['REQUEST_METHOD'] === 'POST')
 			{
 				$sql = "SELECT password FROM USERS WHERE username = '$username'";
+				
+				echo $conn;
 				if ($conn->query($sql) === TRUE)
 				{
 					$retrieved_password = mysqli_query($conn, $sql);
@@ -57,8 +59,6 @@
 					{
 						$authenticated = TRUE;
 					}
-					
-					echo $authenticated;
 				}
 				else
 				{
