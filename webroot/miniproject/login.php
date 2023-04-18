@@ -47,12 +47,12 @@
 		</p>
 		
 		<?php
-			if ($_SERVER['REQUEST_METHOD'] == 'POST')
+			if ($_SERVER['REQUEST_METHOD'] === 'POST')
 			{
 				$username = $_POST["username"];
 				$password = $_POST["password"];
 				
-				//$sql = 'INSERT INTO USERS (username, password) VALUES ("$username", "$password")';
+
 				
 				if ($conn->query($sql) === TRUE)
 				{
