@@ -50,7 +50,7 @@
 				
 				//if ($conn->query($sql) === TRUE)
 				//{								
-					$retrieved_password = $db->query($sql)->fetch_object()->service_label
+					$retrieved_password = $db->query($sql)->fetch_object()->service_label;
 					
 					echo $retrieved_password;
 					
