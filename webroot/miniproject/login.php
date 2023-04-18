@@ -54,8 +54,8 @@
 				
 
 				
-				print($username)
-				print($password)
+				print($username);
+				print($password);
 			}
 		?>
 	</body>
