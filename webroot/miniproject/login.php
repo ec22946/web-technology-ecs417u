@@ -29,6 +29,8 @@
 			
 			$username = $_POST["username"];
 			$password = $_POST["password"];
+			
+			$authenticated = FALSE;
 		
 			$dbhost = getenv("MYSQL_SERVICE_HOST");
 			$dbport = getenv("MYSQL_SERVICE_PORT");
@@ -45,11 +47,17 @@
 			if ($_SERVER['REQUEST_METHOD'] === 'POST')
 			{
 				//$sql = "INSERT INTO USERS (username, password) VALUES ('$username', '$password')";
-				$sql = "SELECT password FROM USERS WHERE username = $username";
+				$sql = "SELECT password FROM USERS WHERE username = '$username'";
 				if ($conn->query($sql) === TRUE)
 				{
 					$retrieved_password = $conn->query($sql);
-					echo $retrieved_password;
+					
+					if($retrieved_password == $password)
+					{
+						$authenticated = TRUE;
+					}
+					
+					echo $authenticated;
 				}
 				else
 				{
