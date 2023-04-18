@@ -36,7 +36,7 @@
 			$dbpwd = getenv("DATABASE_PASSWORD");
 			$dbname = getenv("DATABASE_NAME");
 			
-			$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+			$conn = new mysql($dbhost, $dbuser, $dbpwd, $dbname);
 			if ($conn->connect_error)
 			{
 				die("Connection failed: " . $conn->connect_error);
