@@ -46,7 +46,6 @@
 			
 			if ($_SERVER['REQUEST_METHOD'] === 'POST')
 			{
-				//$sql = "INSERT INTO USERS (username, password) VALUES ('$username', '$password')";
 				$sql = "SELECT password FROM USERS WHERE username = '$username'";
 				if ($conn->query($sql) === TRUE)
 				{
@@ -68,7 +67,16 @@
 		?>
 		
 		<p>
-			Username: <?php echo $username; ?>
+			<?php
+				if($authenticated)
+				{
+					echo "Welcome $username";
+				}
+				else
+				{
+					echo "$username not found";
+				}
+			?>
 		</p>
 	</body>
 </html>
