@@ -36,5 +36,25 @@
 		<p>
 			Password: <?php echo $_POST["password"]?>
 		</p>
+		
+		<?php
+			if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+				$sql = "INSERT INTO USERS (username, password) 
+				VALUES ('$_POST["username"]', '$_POST["password"]')";
+				if ($conn->query($sql) === TRUE) {
+				//Your code goes here
+				} else {
+				echo "Error: " . $sql . "<br>" . $conn->error;
+				}
+				$conn->close();
+			}
+		?>
 	</body>
 </html>
+
+CREATE TABLE USERS (
+	ID int NOT NULL AUTO_INCREMENT,
+	username varchar(255),
+	password varchar(255),
+	PRIMARY KEY (ID)
+);
