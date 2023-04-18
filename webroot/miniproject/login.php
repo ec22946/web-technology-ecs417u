@@ -50,8 +50,9 @@
 				
 				//if ($conn->query($sql) === TRUE)
 				//{								
-					$retrieved_password = mysqli_query($conn, $sql);
-					$retrieved_password = $retrieved_password[password];
+					$result = mysqli_query($conn, $sql);
+					$retrieved_passwords = mysqli_fetch_array($result);
+					$retrieved_password = $retrieved_passwords[password];
 					
 					echo "<br> $retrieved_password";
 					
