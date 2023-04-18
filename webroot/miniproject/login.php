@@ -36,7 +36,7 @@
 			$dbpwd = getenv("DATABASE_PASSWORD");
 			$dbname = getenv("DATABASE_NAME");
 			
-			$conn = new mysql($dbhost, $dbuser, $dbpwd, $dbname);
+			$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 			if ($conn->connect_error)
 			{
 				die("Connection failed: " . $conn->connect_error);
@@ -44,14 +44,12 @@
 			
 			if ($_SERVER['REQUEST_METHOD'] === 'POST')
 			{
-				if ($conn->query($sql) === TRUE)
-				{
+
 					$sql = "INSERT INTO USERS (username, password) VALUES ('$username', '$password')";
-				}
-				else
-				{
-					echo "Error: " . $sql . "<br>" . $conn->error;
-				}
+				
+
+					
+
 				$conn->close();
 			}
 		?>
