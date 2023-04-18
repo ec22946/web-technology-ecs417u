@@ -18,6 +18,15 @@
 		</hgroup>
 		
 		<?php
+			/**
+			CREATE TABLE USERS (
+			ID int NOT NULL AUTO_INCREMENT,
+			username varchar(255),
+			password varchar(255),
+			PRIMARY KEY (ID)
+			);
+			**/
+			
 			$username = $_POST["username"];
 			$password = $_POST["password"];
 		
