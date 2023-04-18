@@ -47,25 +47,7 @@
 		</p>
 		
 		<?php
-			/**
-			if ($_SERVER['REQUEST_METHOD'] == 'POST')
-			{
-				$username = $_POST["username"];
-				$password = $_POST["password"];
-				
-				$sql = 'INSERT INTO USERS (username, password) VALUES ("$username", "$password")';
-				
-				if ($conn->query($sql) === TRUE)
-				{
-					
-				}
-				else
-				{
-					echo "Error: " . $sql . "<br>" . $conn->error;
-				}
-				$conn->close();
-			}
-			**/
+
 		?>
 	</body>
 </html>
