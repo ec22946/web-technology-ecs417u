@@ -18,6 +18,13 @@
 		</hgroup>
 		
 		<?php
+			//CREATE TABLE USERS (
+			//ID int NOT NULL AUTO_INCREMENT,
+			//username varchar(255),
+			//password varchar(255),
+			//PRIMARY KEY (ID)
+			//);
+		
 			$dbhost = getenv("MYSQL_SERVICE_HOST");
 			$dbport = getenv("MYSQL_SERVICE_PORT");
 			$dbuser = getenv("DATABASE_USER");
@@ -39,8 +46,11 @@
 		
 		<?php
 			if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+				$username = $_POST["username"];
+				$password = $_POST["password"];
+				
 				$sql = "INSERT INTO USERS (username, password) 
-				VALUES ('$_POST["username"]', '$_POST["password"]')";
+				VALUES ('$username', '$password')";
 				if ($conn->query($sql) === TRUE) {
 				//Your code goes here
 				} else {
