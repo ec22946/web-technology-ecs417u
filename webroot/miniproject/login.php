@@ -52,7 +52,7 @@
 				//{								
 					$result = mysqli_query($conn, $sql);
 					$retrieved_passwords = mysqli_fetch_array($result);
-					$retrieved_password = $retrieved_passwords[password];
+					$retrieved_password = $retrieved_passwords['password'];
 					
 					echo "<br> $retrieved_password";
 					
