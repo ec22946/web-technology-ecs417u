@@ -44,12 +44,15 @@
 			
 			if ($_SERVER['REQUEST_METHOD'] === 'POST')
 			{
-
-					$sql = "INSERT INTO USERS (username, password) VALUES ('$username', '$password')";
-				
-
+				$sql = "INSERT INTO USERS (username, password) VALUES ('$username', '$password')";
+				if ($conn->query($sql) === TRUE)
+				{
 					
-
+				}
+				else
+				{
+					echo "Error: " . $sql . "<br>" . $conn->error;
+				}
 				$conn->close();
 			}
 		?>
