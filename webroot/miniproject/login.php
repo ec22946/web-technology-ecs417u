@@ -33,8 +33,10 @@
 			$dbpwd = getenv("DATABASE_PASSWORD");
 			$dbname = getenv("DATABASE_NAME");
 			$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
-			if ($conn->connect_error) {
-			die("Connection failed: " . $conn->connect_error);
+			if ($conn->connect_error)
+			{
+				die("Connection failed: " . $conn->connect_error);
+			}
 		?>
 		
 		<p>
@@ -45,12 +47,12 @@
 		</p>
 		
 		<?php
-			if ($_SERVER['REQUEST_METHOD'] == 'POST')
+			if ($_SERVER['REQUEST_METHOD'] === 'POST')
 			{
 				$username = $_POST["username"];
 				$password = $_POST["password"];
-				print($username);
-				print($password);
+				echo $username;
+				echo $password;
 				
 				$sql = "INSERT INTO USERS (username, password) VALUES ("$username", "$password")";
 				
