@@ -49,10 +49,8 @@
 				$username = $_POST["username"];
 				$password = $_POST["password"];
 				
-				$sql = "INSERT INTO USERS (username, password) 
-				VALUES ('$username', '$password')";
 				if ($conn->query($sql) === TRUE) {
-				//Your code goes here
+					$sql = "INSERT INTO USERS (username, password) VALUES ("$username", "$password")";
 				} else {
 				echo "Error: " . $sql . "<br>" . $conn->error;
 				}
