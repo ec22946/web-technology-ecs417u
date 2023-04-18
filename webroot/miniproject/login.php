@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title>
-			Login
+			Authentication
 		</title>
 		<link rel="stylesheet" href="reset.css">
 		<link rel="stylesheet" href="desktop.css" media="screen and (min-width:720px)">
@@ -13,7 +13,7 @@
 	<body>
 		<hgroup id="top_header">
 			<header>
-				Login
+				Authentication
 			</header>
 		</hgroup>
 		
@@ -45,10 +45,11 @@
 			if ($_SERVER['REQUEST_METHOD'] === 'POST')
 			{
 				//$sql = "INSERT INTO USERS (username, password) VALUES ('$username', '$password')";
-				$sql = "IF EXISTS (SELECT * FROM USERS WHERE username = $username AND password = $password) BEGIN END";
+				$sql = "SELECT password FROM USERS WHERE username = $username";
 				if ($conn->query($sql) === TRUE)
 				{
-					echo $username;
+					$retrieved_password = $conn->query($sql);
+					echo $retrieved_password;
 				}
 				else
 				{
@@ -60,9 +61,6 @@
 		
 		<p>
 			Username: <?php echo $username; ?>
-		</p>
-		<p>
-			Password: <?php echo $password; ?>
 		</p>
 	</body>
 </html>
