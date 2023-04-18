@@ -18,7 +18,14 @@
 		</hgroup>
 		
 		<?php
-
+			/**
+			CREATE TABLE USERS (
+			ID int NOT NULL AUTO_INCREMENT,
+			username varchar(255),
+			password varchar(255),
+			PRIMARY KEY (ID)
+			);
+			**/
 		
 			$dbhost = getenv("MYSQL_SERVICE_HOST");
 			$dbport = getenv("MYSQL_SERVICE_PORT");
@@ -45,7 +52,7 @@
 				print($username);
 				print($password);
 				
-				/**$sql = 'INSERT INTO USERS (username, password) VALUES ("$username", "$password")';**/
+				$sql = "INSERT INTO USERS (username, password) VALUES ("$username", "$password")";
 				
 				if ($conn->query($sql) === TRUE)
 				{
@@ -57,7 +64,6 @@
 				}
 				$conn->close();
 			}
-			**/
 		?>
 	</body>
 </html>
