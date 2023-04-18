@@ -18,12 +18,14 @@
 		</hgroup>
 		
 		<?php
-			//CREATE TABLE USERS (
-			//ID int NOT NULL AUTO_INCREMENT,
-			//username varchar(255),
-			//password varchar(255),
-			//PRIMARY KEY (ID)
-			//);
+			/**
+			CREATE TABLE USERS (
+			ID int NOT NULL AUTO_INCREMENT,
+			username varchar(255),
+			password varchar(255),
+			PRIMARY KEY (ID)
+			);
+			**/
 		
 			$dbhost = getenv("MYSQL_SERVICE_HOST");
 			$dbport = getenv("MYSQL_SERVICE_PORT");
@@ -45,6 +47,7 @@
 		</p>
 		
 		<?php
+			/**
 			if ($_SERVER['REQUEST_METHOD'] == 'POST')
 			{
 				$username = $_POST["username"];
@@ -62,6 +65,7 @@
 				}
 				$conn->close();
 			}
+			**/
 		?>
 	</body>
 </html>
