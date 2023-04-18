@@ -40,10 +40,10 @@
 		?>
 		
 		<p>
-			Username: <?php echo $_POST["username"]?>
+			Username: <?php echo $_POST["username"];?>
 		</p>
 		<p>
-			Password: <?php echo $_POST["password"]?>
+			Password: <?php echo $_POST["password"];?>
 		</p>
 		
 		<?php
@@ -51,14 +51,10 @@
 			{
 				$username = $_POST["username"];
 				$password = $_POST["password"];
-				echo $username;
-				echo $password;
-				
-				$sql = "INSERT INTO USERS (username, password) VALUES ("$username", "$password")";
 				
 				if ($conn->query($sql) === TRUE)
 				{
-					
+					$sql = "INSERT INTO USERS (username, password) VALUES ("$username", "$password")";
 				}
 				else
 				{
