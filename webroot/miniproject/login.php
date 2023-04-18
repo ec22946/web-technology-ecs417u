@@ -49,8 +49,8 @@
 				$sql = "SELECT password FROM USERS WHERE username = '$username'";
 				
 				//if ($conn->query($sql) === TRUE)
-				//{			
-					$retrieved_password = mysqli_query($conn, $sql);
+				//{								
+					$retrieved_password = $db->query($sql)->fetch_object()->service_label
 					
 					echo $retrieved_password;
 					
@@ -58,11 +58,13 @@
 					{
 						$authenticated = TRUE;
 					}
-				//}
+				}
+				/**
 				else
 				{
 					echo "Error: " . $sql . "<br>" . $conn->error;
 				}
+				*//
 				$conn->close();
 			}
 		?>
