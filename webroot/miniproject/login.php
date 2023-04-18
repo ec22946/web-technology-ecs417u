@@ -50,7 +50,7 @@
 				$sql = "SELECT password FROM USERS WHERE username = '$username'";
 				if ($conn->query($sql) === TRUE)
 				{
-					$retrieved_password = $conn->query($sql);
+					$retrieved_password = mysqli_query($conn, $sql);
 					
 					if($retrieved_password == $password)
 					{
