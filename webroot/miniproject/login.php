@@ -44,10 +44,11 @@
 			
 			if ($_SERVER['REQUEST_METHOD'] === 'POST')
 			{
-				$sql = "INSERT INTO USERS (username, password) VALUES ('$username', '$password')";
+				//$sql = "INSERT INTO USERS (username, password) VALUES ('$username', '$password')";
+				$sql = "IF EXISTS (SELECT * FROM USERS WHERE username = $username AND password = $password) BEGIN END";
 				if ($conn->query($sql) === TRUE)
 				{
-					
+					echo $username;
 				}
 				else
 				{
