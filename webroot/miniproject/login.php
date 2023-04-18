@@ -51,6 +51,8 @@
 				{
 					$retrieved_password = mysqli_query($conn, $sql);
 					
+					echo $retrieved_password;
+					
 					if($retrieved_password == $password)
 					{
 						$authenticated = TRUE;
@@ -65,6 +67,8 @@
 				$conn->close();
 			}
 		?>
+		
+		<br>
 		
 		<p>
 			<?php
