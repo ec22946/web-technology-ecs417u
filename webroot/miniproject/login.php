@@ -17,11 +17,24 @@
 			</header>
 		</hgroup>
 		
+		<?php
+			$dbhost = getenv("MYSQL_SERVICE_HOST");
+			$dbport = getenv("MYSQL_SERVICE_PORT");
+			$dbuser = getenv("DATABASE_USER");
+			$dbpwd = getenv("DATABASE_PASSWORD");
+			$dbname = getenv("DATABASE_NAME");
+			// Creates connection
+			$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+			// Checks connection
+			if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		?>
+		
 		<p>
-			Username: <?php echo $_POST[username]?>
+			Username: <?php echo $_POST["username"]?>
 		</p>
 		<p>
-			Password: <?php echo $_POST[password]?>
+			Password: <?php echo $_POST["password"]?>
 		</p>
 	</body>
 </html>
