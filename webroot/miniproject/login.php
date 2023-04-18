@@ -48,13 +48,8 @@
 			{
 				$sql = "SELECT password FROM USERS WHERE username = '$username'";
 				
-				echo "line 51";
-				
-				if ($conn->query($sql) === TRUE)
-				{
-					
-					echo "line 56";
-					
+				//if ($conn->query($sql) === TRUE)
+				//{			
 					$retrieved_password = mysqli_query($conn, $sql);
 					
 					echo $retrieved_password;
@@ -63,7 +58,7 @@
 					{
 						$authenticated = TRUE;
 					}
-				}
+				//}
 				else
 				{
 					echo "Error: " . $sql . "<br>" . $conn->error;
