@@ -21,6 +21,9 @@
 			<header>
 				Portfolio
 			</header>
+			<header id="log_out">
+				Log out
+			</header>
 		</hgroup>
 		
 		<nav id="navigation">

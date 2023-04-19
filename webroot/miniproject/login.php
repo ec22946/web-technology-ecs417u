@@ -57,7 +57,7 @@
 					$result = $conn->query($sql);
 					$retrieved_passwords = $result->fetch_array()[0] ?? '';
 					
-					echo "$retrieved_password == $password"
+					echo "$retrieved_password == $password";
 					
 					if($retrieved_password == $password)
 					{
