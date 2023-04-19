@@ -18,24 +18,7 @@
 	
 	<body>
 	<?php
-		if($_SESSION['authenticated'] == FALSE)
-		{
-			echo
-			'
-				<script type="text/javascript">
-					window.location = "\index.php";
-				</script>
-			';
-		}
-		if(isset($_SESSION['authenticated']) == FALSE)
-		{
-			echo
-			'
-				<script type="text/javascript">
-					window.location = "\index.php";
-				</script>
-			';
-		}
+		echo "<br>";
 	?>
 	
 		<hgroup id="top_header">
