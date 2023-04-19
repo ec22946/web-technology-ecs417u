@@ -1,5 +1,10 @@
 <?php
 	session_start();
+	if($_SESSION['authenticated'] = FALSE)
+		{
+			$inbound = $_SERVER ['HTTP_REFERER']
+			header("Location: //$inbound");
+		}
 ?>
 
 <!DOCTYPE html>
@@ -18,15 +23,7 @@
 	
 	<body>
 	<?php
-		if($_SESSION['authenticated'] = FALSE)
-		{
-			echo
-			'
-				<script type="text/javascript">
-					window.location = "\index.php";
-				</script>
-			';
-		}
+
 	?>
 		<hgroup id="top_header">
 			<header>
