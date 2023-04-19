@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>
-			View Blog
+			Add Entry
 		</title>
 		<link rel="stylesheet" href="reset.css">
 		<link rel="stylesheet" href="desktop.css" media="screen and (min-width:720px)">
@@ -15,24 +15,29 @@
 	<body>
 		<hgroup id="top_header">
 			<header>
-				View Blog
+				Add Entry
 				<a href="index.php" id="homepage_link">🏚</a>
 			</header>
 		</hgroup>
 		
-		<article>
-			<section>
-				<p>
-					<a href="addEntry.php">
-						➕
-					</a>
-				</p>
-			</section>
-			<section>
-				<p>
-					email@email.email
-				</p>
-			</section>
-		</article>
+		<form method="POST" action="addPost.php">
+			<div>
+				<label>
+					Title
+				</label>
+				<input type="text" name="title" required>
+			</div>
+			<div>
+				<label>
+					Text Content
+				</label>
+				<input type="text" name="content" required>
+			</div>
+			<div>
+				<input type="submit" class="button" value="Submit">
+				<input type="reset" class="button" value="Clear">
+			</div>
+		</form>
+
 	</body>
 </html>
