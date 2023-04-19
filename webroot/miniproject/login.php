@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <html>
 	<head>
 		<title>
@@ -30,7 +34,7 @@
 			$username = $_POST["username"];
 			$password = $_POST["password"];
 			
-			$authenticated = FALSE;
+			$_SESSION['authenticated'] = FALSE;
 		
 			$dbhost = getenv("MYSQL_SERVICE_HOST");
 			$dbport = getenv("MYSQL_SERVICE_PORT");
@@ -57,7 +61,7 @@
 					
 					if($retrieved_password == $password)
 					{
-						$authenticated = TRUE;
+						$_SESSION['authenticated'] = TRUE;
 					}
 				//}
 				/**
@@ -74,7 +78,7 @@
 		
 		<p>
 			<?php
-				if($authenticated)
+				if($_SESSION['authenticated'])
 				{
 					echo "Welcome $username";
 				}

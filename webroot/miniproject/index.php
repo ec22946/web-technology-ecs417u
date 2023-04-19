@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -141,7 +145,7 @@
 		
 		<footer id="footer">
 			<p>
-				footer
+				Footer
 			</p>
 		</footer>
 	</body>
