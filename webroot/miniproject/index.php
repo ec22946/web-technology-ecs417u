@@ -135,25 +135,31 @@
 				{
 					echo "Logged in";
 				}
+				else
+				{
+					echo 
+					'
+						<form method="POST" action="login.php">
+							<div>
+								<label>
+									Username
+								</label>
+								<input type="text" name="username" required>
+							</div>
+							<div>
+								<label>
+									Password
+								</label>
+								<input type="password" name="password" minlength="8" required>
+							</div>
+							<div>
+								<input type="submit" class="button" value="Submit">
+								<input type="reset" class="button" value="Clear Form">
+							</div>
+						</form>
+					';
+				}
 			?>
-			<form method="POST" action="login.php">
-				<div>
-					<label>
-						Username
-					</label>
-					<input type="text" name="username" required>
-				</div>
-				<div>
-					<label>
-						Password
-					</label>
-					<input type="password" name="password" minlength="8" required>
-				</div>
-				<div>
-					<input type="submit" class="button" value="Submit">
-					<input type="reset" class="button" value="Clear Form">
-				</div>
-			</form>
 		</aside>
 		
 		<footer id="footer">
