@@ -25,6 +25,7 @@
 				<?php
 					if($_SESSION['authenticated'] == TRUE)
 					{
+						$current_user = $_SESSION['current_user'];
 						print("<a href='logout.php'>Log out</a>");
 					}
 				?>
@@ -134,7 +135,7 @@
 			<?php
 				if($_SESSION['authenticated'] == TRUE)
 				{
-					echo "Logged In as $_SESSION['current_user']";
+					echo "Logged in";
 				}
 			?>
 			<form method="POST" action="login.php">
