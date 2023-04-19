@@ -27,9 +27,17 @@
 		<article>
 			<section>
 				<p id="add_entry_button">
-					<a href="addEntry.php">
-						➕
-					</a>
+					<?php
+						if($_SESSION['authenticated'] == TRUE)
+						{
+							echo
+							'
+								<a href="addEntry.php">
+									➕
+								</a>
+							';
+						}
+					?>
 				</p>
 			</section>
 		</article>

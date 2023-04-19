@@ -42,13 +42,10 @@
 			}
 			
 			
-			
-			/**
 			echo
 			'
 				<script type="text/javascript">
-					window.location = "\index.php";
+					window.location = "\viewBlog.php";
 				</script>
 			';
-			**/
 ?>
