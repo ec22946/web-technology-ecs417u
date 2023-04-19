@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,6 +17,17 @@
 	</head>
 	
 	<body>
+	<?php
+		if($_SESSION['authenticated'] = FALSE)
+		{
+			echo
+			'
+				<script type="text/javascript">
+					window.location = "\index.php";
+				</script>
+			';
+		}
+	?>
 		<hgroup id="top_header">
 			<header>
 				Add Entry

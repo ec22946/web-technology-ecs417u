@@ -120,9 +120,17 @@
 			</section>
 			<section id="Blog">
 				<header>
-					<a href="viewBlog.php">
-						Blog
-					</a>
+					<?php
+						if($_SESSION['authenticated'] == TRUE)
+						{
+							echo
+							'
+								<a href="viewBlog.php">
+									Blog
+								</a>
+							';
+						}
+					?>
 				</header>
 			</section>
 		

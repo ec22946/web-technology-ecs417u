@@ -18,8 +18,8 @@
 	<body>
 		<hgroup id="top_header">
 			<header>
-				Authentication
-				<a href="index.php" id="homepage_link">🏠</a>
+				Authentication	
+				<a href="index.php" id="homepage_link">🏚</a>
 			</header>
 		</hgroup>
 		
