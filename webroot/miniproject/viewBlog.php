@@ -17,11 +17,6 @@
 	</head>
 	
 	<body>
-	<?php
-		print($_SESSION['authenticated']);
-		print(isset($_SESSION['authenticated']));
-	?>
-	
 		<hgroup id="top_header">
 			<header>
 				View Blog

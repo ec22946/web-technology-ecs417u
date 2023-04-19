@@ -17,10 +17,6 @@
 	</head>
 	
 	<body>
-	<?php
-		echo "<br>";
-	?>
-	
 		<hgroup id="top_header">
 			<header>
 				Add Entry
