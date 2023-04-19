@@ -11,4 +11,20 @@
 			PRIMARY KEY (ID)
 			);
 			**/
+			
+			$blog_post_title = $_POST["title"];
+			$blog_post_content = $_POST["content"];
+			
+			echo $blog_post_title;
+			echo $blog_post_content;
+			
+			
+			/**
+			echo
+			'
+				<script type="text/javascript">
+					window.location = "\index.php";
+				</script>
+			';
+			**/
 ?>

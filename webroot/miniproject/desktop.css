@@ -133,3 +133,23 @@ body
 	margin-left:200%;
 	font-size:200%;
 }
+#blog_post_form
+{
+	margin-left:125%;
+	margin-right:0%;
+	
+}
+#title-field
+{
+	padding-left:100%;
+	background-color:darkgrey;
+}
+#content-field
+{
+	padding:50%;
+	background-color:darkgrey;
+}
+.not_filled_in
+{
+	background-color:grey;
+}

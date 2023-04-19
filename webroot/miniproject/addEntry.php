@@ -24,24 +24,20 @@
 			</header>
 		</hgroup>
 		
-		<form method="POST" action="addPost.php">
-			<div>
-				<label>
-					Title
-				</label>
-				<input type="text" name="title" required>
-			</div>
-			<div>
-				<label>
-					Text Content
-				</label>
-				<input type="text" name="content" required>
-			</div>
-			<div>
-				<input type="submit" class="button" value="Submit">
-				<input type="reset" class="button" value="Clear">
-			</div>
-		</form>
+		<div id="blog_post_form">
+			<form method="POST" action="addPost.php">
+				<div>
+					<input type="text" name="title" placeholder="title" id="title-field" required>
+				</div>
+				<div>
+					<input type="text" name="content" placeholder="text content" id="content-field" required>
+				</div>
+				<div>
+					<input type="submit" class="button" value="Submit">
+					<input type="reset" class="button" value="Clear">
+				</div>
+			</form>
+		</div>
 
 	</body>
 </html>
