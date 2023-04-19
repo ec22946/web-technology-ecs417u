@@ -18,7 +18,7 @@
 	
 	<body>
 	<?php
-		if($_SESSION['authenticated'] = FALSE)
+		if($_SESSION['authenticated'] == FALSE)
 		{
 			echo
 			'
@@ -27,7 +27,7 @@
 				</script>
 			';
 		}
-		if(isset($_SESSION['authenticated']) = FALSE)
+		if(isset($_SESSION['authenticated']) == FALSE)
 		{
 			echo
 			'

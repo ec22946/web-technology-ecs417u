@@ -18,7 +18,7 @@
 	
 	<body>
 	<?php
-		if(isset($_SESSION['authenticated']) = FALSE)
+		if(isset($_SESSION['authenticated']) == FALSE)
 		{
 			echo
 			'
