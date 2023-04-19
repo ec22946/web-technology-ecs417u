@@ -27,6 +27,15 @@
 				</script>
 			';
 		}
+		if(isset($_SESSION['authenticated']) = FALSE)
+		{
+			echo
+			'
+				<script type="text/javascript">
+					window.location = "\index.php";
+				</script>
+			';
+		}
 	?>
 	
 		<hgroup id="top_header">

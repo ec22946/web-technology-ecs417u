@@ -18,6 +18,15 @@
 	
 	<body>
 	<?php
+		if(isset($_SESSION['authenticated']) = FALSE)
+		{
+			echo
+			'
+				<script type="text/javascript">
+					window.location = "\index.php";
+				</script>
+			';
+		}
 		if($_SESSION['authenticated'] = FALSE)
 		{
 			echo
