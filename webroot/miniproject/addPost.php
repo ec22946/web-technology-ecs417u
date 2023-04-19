@@ -41,11 +41,11 @@
 			$conn->close();
 			}
 			
-			
+			$referrer = $_SERVER['HTTP_REFERER'];
 			echo
-			'
+			"
 				<script type="text/javascript">
-					window.location = "\viewBlog.php";
+					window.location = '$referrer';
 				</script>
-			';
+			";
 ?>

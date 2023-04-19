@@ -33,8 +33,16 @@
 					<input type="text" name="content" placeholder="text content" id="content-field" required>
 				</div>
 				<div>
-					<input type="submit" class="button" value="Submit">
-					<input type="reset" class="button" value="Clear">
+					<?php
+						if($_SESSION['authenticated'] == TRUE)
+						{
+							echo
+							'
+								<input type="submit" class="button" value="Submit">
+								<input type="reset" class="button" value="Clear">
+							';
+						}
+					?>
 				</div>
 			</form>
 		</div>
