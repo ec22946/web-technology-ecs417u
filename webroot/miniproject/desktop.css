@@ -21,6 +21,10 @@ a
 {
 	color:darkgrey;
 }
+header a
+{
+	color:grey;
+}
 caption
 {
 	font-size:50%;
