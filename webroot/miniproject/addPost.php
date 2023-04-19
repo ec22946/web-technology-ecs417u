@@ -45,7 +45,7 @@
 			echo
 			"
 				<script type='text/javascript'>
-					window.location = '$referrer';
+					window.location = 'viewBlog.php';
 				</script>
 			";
 ?>
