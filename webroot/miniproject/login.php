@@ -57,12 +57,20 @@
 					$result = $conn->query($sql);
 					$retrieved_passwords = $result->fetch_array()[0] ?? '';
 					
+					echo "$retrieved_password == $password"
+					
 					if($retrieved_password == $password)
 					{
 						$_SESSION['authenticated'] = TRUE;
+						$_SESSION['current_user'] = $username;
+						echo "$retrieved_password == $password";
 					}
-				//}
+					else
+					{
+						echo "$retrieved_password != $password";
+					}
 				/**
+				}
 				else
 				{
 					echo "Error: " . $sql . "<br>" . $conn->error;
