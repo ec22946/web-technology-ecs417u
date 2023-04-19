@@ -126,7 +126,7 @@
 			<?php
 				if($_SESSION['authenticated'] == TRUE)
 				{
-					echo "Logged In"
+					echo "Logged In";
 				}
 			?>
 			<form method="POST" action="login.php">
