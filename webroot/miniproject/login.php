@@ -99,7 +99,7 @@
 				}
 				else
 				{
-					echo "$username not found";
+					echo "Not logged in";
 				}
 			?>
 		</p>

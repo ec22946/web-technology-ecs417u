@@ -154,7 +154,7 @@
 							</div>
 							<div>
 								<input type="submit" class="button" value="Submit">
-								<input type="reset" class="button" value="Clear Form">
+								<input type="reset" class="button" value="Clear">
 							</div>
 						</form>
 					';

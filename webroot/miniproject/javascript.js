@@ -1,5 +1,4 @@
 let form_reset_button = document.querySelector('input[type="reset"]');
-console.log(form_reset_button);
 
 function manual_clear(e)
 {
