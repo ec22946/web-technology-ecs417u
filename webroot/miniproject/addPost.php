@@ -1,10 +1,5 @@
 <?php
 	session_start();
-	if($_SESSION['authenticated'] = FALSE)
-		{
-			$inbound = $_SERVER ['HTTP_REFERER'];
-			header("Location: //$inbound");
-		}
 ?>
 
 <?php

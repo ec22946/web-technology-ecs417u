@@ -127,3 +127,9 @@ body
 	margin-right:0%;
 	margin-left:96%;
 }
+#add_entry_button
+{
+	text-align: right;
+	margin-left:200%;
+	font-size:200%;
+}

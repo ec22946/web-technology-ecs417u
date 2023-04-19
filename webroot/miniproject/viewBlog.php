@@ -1,10 +1,5 @@
 <?php
 	session_start();
-	if($_SESSION['authenticated'] = FALSE)
-		{
-			$inbound = $_SERVER ['HTTP_REFERER'];
-			header("Location: //$inbound");
-		}
 ?>
 
 <!DOCTYPE html>
@@ -22,9 +17,6 @@
 	</head>
 	
 	<body>
-	<?php
-
-	?>
 		<hgroup id="top_header">
 			<header>
 				View Blog
@@ -34,7 +26,7 @@
 		
 		<article>
 			<section>
-				<p>
+				<p id="add_entry_button">
 					<a href="addEntry.php">
 						➕
 					</a>
