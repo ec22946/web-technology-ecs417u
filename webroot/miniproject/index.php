@@ -20,13 +20,11 @@
 		<hgroup id="top_header">
 			<header>
 				Portfolio
-			</header>
-			<header id="log_out">
 				<?php
 					if($_SESSION['authenticated'] == TRUE)
 					{
 						$current_user = $_SESSION['current_user'];
-						print("<a href='logout.php'>Log out</a>");
+						print("<a href='logout.php' id='log_out'>Log out</a>");
 					}
 				?>
 			</header>
