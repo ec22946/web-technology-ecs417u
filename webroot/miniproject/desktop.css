@@ -1,11 +1,3 @@
-header
-{
-	font-size:200%;
-	font-weight:bold;
-	background:darkgrey;
-	color:lightgrey;
-	font-family: 'Staatliches', sans-serif;
-}
 section header
 {
 	font-size:100%;
@@ -37,6 +29,11 @@ caption
 {
 	grid-area:top_header;
 	border:dotted 1px black;
+	font-size:200%;
+	font-weight:bold;
+	background:darkgrey;
+	color:lightgrey;
+	font-family: 'Staatliches', sans-serif;
 }
 #navigation
 {
@@ -115,4 +112,9 @@ body
 {
 	margin-left:40%;
 	margin-top:50%;
+}
+#log_out
+{
+	margin-right:0%;
+	margin-left:90%;
 }

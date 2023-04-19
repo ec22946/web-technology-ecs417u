@@ -22,7 +22,12 @@
 				Portfolio
 			</header>
 			<header id="log_out">
-				Log out
+				<?php
+					if($_SESSION['authenticated'] == TRUE)
+					{
+						echo '<a href="logout.php">Log out</a>';
+					}
+				?>
 			</header>
 		</hgroup>
 		
