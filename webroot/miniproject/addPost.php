@@ -44,7 +44,7 @@
 			$referrer = $_SERVER['HTTP_REFERER'];
 			echo
 			"
-				<script type="text/javascript">
+				<script type='text/javascript'>
 					window.location = '$referrer';
 				</script>
 			";
