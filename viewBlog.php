@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -22,13 +26,18 @@
 		
 		<article>
 			<section>
-				<p>
-
-				</p>
-			</section>
-			<section>
-				<p>
-					email@email.email
+				<p id="add_entry_button">
+					<?php
+						if($_SESSION['authenticated'] == TRUE)
+						{
+							echo
+							'
+								<a href="addEntry.php">
+									➕
+								</a>
+							';
+						}
+					?>
 				</p>
 			</section>
 		</article>
