@@ -62,11 +62,6 @@
 						Contact
 					</li>
 				</a>
-				<a href="#Blog">
-					<li>
-						Blog
-					</li>
-				</a>
 			</ul>
 		</nav>
 		
@@ -125,7 +120,9 @@
 			</section>
 			<section id="Blog">
 				<header>
-					Blog
+					<a href="viewBlog.php">
+						Blog
+					</a>
 				</header>
 			</section>
 		
@@ -133,7 +130,7 @@
 			<?php
 				if($_SESSION['authenticated'] == TRUE)
 				{
-					echo "Logged in";
+					echo "Logged in as $current_user";
 				}
 				else
 				{
