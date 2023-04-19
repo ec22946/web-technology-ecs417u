@@ -123,6 +123,12 @@
 			</section>
 		
 		<aside id="aside">
+			<?php
+				if($_SESSION['authenticated'] == TRUE)
+				{
+					echo "Logged In"
+				}
+			?>
 			<form method="POST" action="login.php">
 				<div>
 					<label>
