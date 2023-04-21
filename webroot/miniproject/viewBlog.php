@@ -80,17 +80,7 @@
 		</p>
 		
 		<article id="blog_content">
-			<section>
-				<header>
-					Temp title 1
-				</header>
-				<p>
-					sample text 1
-				</p>
-			</section>
-			
 			<?php
-				print_r($blog);
 				for($i = 0; $i < count($retrieved_titles); $i++)
 				{
 					$title = $retrieved_titles[$i];
