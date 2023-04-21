@@ -32,73 +32,6 @@
 			
 			//if ($_SERVER['REQUEST_METHOD'] === 'POST')
 			//{
-				$sql = "SELECT title FROM BLOG";
-				
-				//if ($conn->query($sql) === TRUE)
-				//{								
-					//$result = $conn->query($sql);
-					
-					$result = mysqli_query($conn, $sql);
-					$retrieved_titles = mysqli_fetch_array($result);					
-				/**
-				}
-				else
-				{
-					echo "Error: " . $sql . "<br>" . $conn->error;
-				}
-				**/
-				$conn->close();
-			//}
-		?>
-		<?php
-			$dbhost = getenv("MYSQL_SERVICE_HOST");
-			$dbport = getenv("MYSQL_SERVICE_PORT");
-			$dbuser = getenv("DATABASE_USER");
-			$dbpwd = getenv("DATABASE_PASSWORD");
-			$dbname = getenv("DATABASE_NAME");
-			
-			$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
-			if ($conn->connect_error)
-			{
-				die("Connection failed: " . $conn->connect_error);
-			}
-			
-			//if ($_SERVER['REQUEST_METHOD'] === 'POST')
-			//{
-				$sql = "SELECT content FROM BLOG";
-				
-				//if ($conn->query($sql) === TRUE)
-				//{								
-					//$result = $conn->query($sql);
-					
-					$result = mysqli_query($conn, $sql);
-					$retrieved_content = mysqli_fetch_array($result);
-					$retrieved_content = mysqli_fetch_array($result);
-				/**
-				}
-				else
-				{
-					echo "Error: " . $sql . "<br>" . $conn->error;
-				}
-				**/
-				$conn->close();
-			//}
-		?>
-		<?php
-			$dbhost = getenv("MYSQL_SERVICE_HOST");
-			$dbport = getenv("MYSQL_SERVICE_PORT");
-			$dbuser = getenv("DATABASE_USER");
-			$dbpwd = getenv("DATABASE_PASSWORD");
-			$dbname = getenv("DATABASE_NAME");
-			
-			$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
-			if ($conn->connect_error)
-			{
-				die("Connection failed: " . $conn->connect_error);
-			}
-			
-			//if ($_SERVER['REQUEST_METHOD'] === 'POST')
-			//{
 				$sql = "SELECT * FROM BLOG";
 				
 				//if ($conn->query($sql) === TRUE)
@@ -106,7 +39,14 @@
 					//$result = $conn->query($sql);
 					
 					$result = mysqli_query($conn, $sql);
-					$blog = mysqli_fetch_array($result);
+					
+					$retrieved_titles[] = array();
+					$retrieved_content[] = array();
+					while($blog = mysqli_fetch_array($result))
+					{
+						$retrieved_titles[] = $blog['title'];
+						$retrieved_content[] = $blog['content'];
+					}
 				/**
 				}
 				else
@@ -150,8 +90,6 @@
 			</section>
 			
 			<?php
-				print_r($retrieved_titles);
-				print_r($retrieved_content);
 				print_r($blog);
 				for($i = 0; $i < count($retrieved_titles); $i++)
 				{
