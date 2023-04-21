@@ -37,11 +37,9 @@
 				//if ($conn->query($sql) === TRUE)
 				//{								
 					//$result = $conn->query($sql);
-					//$retrieved_passwords = $result->fetch_array()[0] ?? '';
 					
 					$result = mysqli_query($conn, $sql);
-					$retrieved_titles = mysqli_fetch_array($result);
-					
+					$retrieved_titles = mysqli_fetch_array($result);					
 				/**
 				}
 				else
@@ -72,10 +70,43 @@
 				//if ($conn->query($sql) === TRUE)
 				//{								
 					//$result = $conn->query($sql);
-					//$retrieved_passwords = $result->fetch_array()[0] ?? '';
 					
 					$result = mysqli_query($conn, $sql);
 					$retrieved_content = mysqli_fetch_array($result);
+					$retrieved_content = mysqli_fetch_array($result);
+				/**
+				}
+				else
+				{
+					echo "Error: " . $sql . "<br>" . $conn->error;
+				}
+				**/
+				$conn->close();
+			//}
+		?>
+		<?php
+			$dbhost = getenv("MYSQL_SERVICE_HOST");
+			$dbport = getenv("MYSQL_SERVICE_PORT");
+			$dbuser = getenv("DATABASE_USER");
+			$dbpwd = getenv("DATABASE_PASSWORD");
+			$dbname = getenv("DATABASE_NAME");
+			
+			$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+			if ($conn->connect_error)
+			{
+				die("Connection failed: " . $conn->connect_error);
+			}
+			
+			//if ($_SERVER['REQUEST_METHOD'] === 'POST')
+			//{
+				$sql = "SELECT * FROM BLOG";
+				
+				//if ($conn->query($sql) === TRUE)
+				//{								
+					//$result = $conn->query($sql);
+					
+					$result = mysqli_query($conn, $sql);
+					$blog = mysqli_fetch_array($result);
 				/**
 				}
 				else
@@ -121,6 +152,7 @@
 			<?php
 				print_r($retrieved_titles);
 				print_r($retrieved_content);
+				print_r($blog);
 				for($i = 0; $i < count($retrieved_titles); $i++)
 				{
 					$title = $retrieved_titles[$i];
