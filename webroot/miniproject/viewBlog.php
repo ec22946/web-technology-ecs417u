@@ -119,6 +119,8 @@
 			</section>
 			
 			<?php
+				print_r($retrieved_titles);
+				print_r($retrieved_content);
 				for($i = 0; $i < count($retrieved_titles); $i++)
 				{
 					$title = $retrieved_titles[$i];
