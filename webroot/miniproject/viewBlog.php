@@ -32,7 +32,7 @@
 			
 			if ($_SERVER['REQUEST_METHOD'] === 'POST')
 			{
-				$sql = "SELECT title FROM BLOG";
+				$sql = "SELECT title, content FROM BLOG";
 				
 				//if ($conn->query($sql) === TRUE)
 				//{								
@@ -40,41 +40,7 @@
 					//$retrieved_passwords = $result->fetch_array()[0] ?? '';
 					
 					$result = mysqli_query($conn, $sql);
-					$retrieved_titles = mysqli_fetch_array($result);
-				/**
-				}
-				else
-				{
-					echo "Error: " . $sql . "<br>" . $conn->error;
-				}
-				**/
-				$conn->close();
-			}
-		?>
-		<?php
-			$dbhost = getenv("MYSQL_SERVICE_HOST");
-			$dbport = getenv("MYSQL_SERVICE_PORT");
-			$dbuser = getenv("DATABASE_USER");
-			$dbpwd = getenv("DATABASE_PASSWORD");
-			$dbname = getenv("DATABASE_NAME");
-			
-			$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
-			if ($conn->connect_error)
-			{
-				die("Connection failed: " . $conn->connect_error);
-			}
-			
-			if ($_SERVER['REQUEST_METHOD'] === 'POST')
-			{
-				$sql = "SELECT content FROM BLOG";
-				
-				//if ($conn->query($sql) === TRUE)
-				//{								
-					//$result = $conn->query($sql);
-					//$retrieved_passwords = $result->fetch_array()[0] ?? '';
-					
-					$result = mysqli_query($conn, $sql);
-					$retrieved_content = mysqli_fetch_array($result);
+					$retrieved_title_content = mysqli_fetch_row($result);
 				/**
 				}
 				else
@@ -93,22 +59,21 @@
 			</header>
 		</hgroup>
 		
+		<div id="add_entry_button">
+			<?php
+				if($_SESSION['authenticated'] == TRUE)
+				{
+					echo
+					'
+						<a href="addEntry.php">
+							➕
+						</a>
+					';
+				}
+			?>
+		</div>
+		
 		<article id="blog_content">
-			<section>
-				<p id="add_entry_button">
-					<?php
-						if($_SESSION['authenticated'] == TRUE)
-						{
-							echo
-							'
-								<a href="addEntry.php">
-									➕
-								</a>
-							';
-						}
-					?>
-				</p>
-			</section>
 			<?php
 				echo
 				"
@@ -129,8 +94,7 @@
 						</p>
 					</section>
 				";
-				print_r($retrieved_titles);
-				print_r($retrieved_content);
+				print_r($retrieved_title_content);
 			?>	
 		</article>
 	</body>
