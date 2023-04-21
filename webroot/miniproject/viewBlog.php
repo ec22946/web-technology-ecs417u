@@ -54,7 +54,7 @@
 				}
 				**/
 				$conn->close();
-			}
+			//}
 		?>
 		<?php
 			$dbhost = getenv("MYSQL_SERVICE_HOST");
@@ -129,7 +129,7 @@
 			<?php
 				print_r($retrieved_titles);
 				print_r($retrieved_content);
-				for($i = 0; $i < 3; $i++)
+				for($i = 0; $i < count($retrieved_titles); $i++)
 				{
 					$title = $retrieved_titles[$i];
 					$content = $retrieved_content[$i];
@@ -137,10 +137,10 @@
 					"
 						<section>
 							<header>
-								$i title
+								$title
 							</header>
 							<p>
-								$i content
+								$content
 							</p>
 						</section>
 					";
