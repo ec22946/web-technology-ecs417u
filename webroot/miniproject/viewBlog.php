@@ -81,7 +81,7 @@
 		
 		<article id="blog_content">
 			<?php
-				for($i = 0; $i < count($retrieved_titles); $i++)
+				for($i = 1; $i < count($retrieved_titles); $i++)
 				{
 					$title = $retrieved_titles[$i];
 					$content = $retrieved_content[$i];
