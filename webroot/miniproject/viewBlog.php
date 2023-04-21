@@ -40,11 +40,7 @@
 					//$retrieved_passwords = $result->fetch_array()[0] ?? '';
 					
 					$result = mysqli_query($conn, $sql);
-					//$retrieved_titles = mysqli_fetch_array($result);
-					  while ($row = $result -> mysqli_fetch_row())
-					  {
-						$retrieved_titles[] = $row;
-					  }
+					$retrieved_titles = mysqli_fetch_array($result);
 					
 				/**
 				}
@@ -79,11 +75,7 @@
 					//$retrieved_passwords = $result->fetch_array()[0] ?? '';
 					
 					$result = mysqli_query($conn, $sql);
-					//$retrieved_content = mysqli_fetch_array($result);
-					  while ($row = $result -> mysqli_fetch_row())
-					  {
-						$retrieved_content[] = $row;
-					  }
+					$retrieved_content = mysqli_fetch_array($result);
 				/**
 				}
 				else
@@ -127,8 +119,6 @@
 			</section>
 			
 			<?php
-				print_r($retrieved_titles);
-				print_r($retrieved_content);
 				for($i = 0; $i < count($retrieved_titles); $i++)
 				{
 					$title = $retrieved_titles[$i];
