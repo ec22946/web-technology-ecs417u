@@ -8,12 +8,14 @@
 			ID int NOT NULL AUTO_INCREMENT,
 			title varchar(255),
 			content varchar(255),
+			datetime varchar(255),
 			PRIMARY KEY (ID)
 			);
 			**/
 			
 			$blog_post_title = $_POST["title"];
 			$blog_post_content = $_POST["content"];
+			$current_date = date("dS F Y, g:i e");
 			
 			$dbhost = getenv("MYSQL_SERVICE_HOST");
 			$dbport = getenv("MYSQL_SERVICE_PORT");
@@ -29,7 +31,7 @@
 			}
 			
 			if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-			$sql = "INSERT INTO BLOG (title, content) VALUES ('$blog_post_title', '$blog_post_content')";
+			$sql = "INSERT INTO BLOG (title, content, datetime) VALUES ('$blog_post_title', '$blog_post_content', '$current_date')";
 			if ($conn->query($sql) === TRUE)
 			{
 				

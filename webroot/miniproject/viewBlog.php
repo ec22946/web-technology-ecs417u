@@ -42,10 +42,12 @@
 					
 					$retrieved_titles[] = array();
 					$retrieved_content[] = array();
+					$retrieved_datetimes[] = array();
 					while($blog = mysqli_fetch_array($result))
 					{
 						$retrieved_titles[] = $blog['title'];
 						$retrieved_content[] = $blog['content'];
+						$retrieved_datetimes[] = $blog['datetime'];
 					}
 				/**
 				}
@@ -81,16 +83,21 @@
 		
 		<article id="blog_content">
 			<?php
+				
 				for($i = 1; $i < count($retrieved_titles); $i++)
 				{
 					$title = $retrieved_titles[$i];
 					$content = $retrieved_content[$i];
+					$datetime = $retrieved_datetimes[$i];
 					echo
 					"
 						<section>
 							<header>
 								$title
 							</header>
+							<caption>
+								$datetime
+							</caption>
 							<p>
 								$content
 							</p>
