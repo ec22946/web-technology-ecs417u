@@ -153,7 +153,7 @@ body
 {
 	background-color:grey;
 }
-#blog_content
+.blog_content
 {
-	margin-left:60%;
+	margin-left:20%;
 }

@@ -93,7 +93,7 @@
 			</header>
 		</hgroup>
 		
-		<article id="blog_content">
+		<article>
 			<section>
 				<p id="add_entry_button">
 					<?php
@@ -109,22 +109,26 @@
 					?>
 				</p>
 			</section>
+			
+			<section class='blog_content'>
+				<header>
+					Temp title 1
+				</header>
+				<p>
+					sample text 1
+				</p>
+			</section>
+			
 			<?php
 				for($i = 0; $i < count($retrieved_titles); $i++)
 				{
 					$title = $retrieved_titles[$i];
+					if (!empty($retrieved_titles)) {echo "empty retrieved_titles";}
+					if (!empty($retrieved_content)) {echo "empty retrieved_content";}
 					$content = $retrieved_content[$i];
 					echo
 					"
-						<section>
-							<header>
-								Temp title 1
-							</header>
-							<p>
-								sample text 1
-							</p>
-						</section>
-						<section>
+						<section class='blog_content'>
 							<header>
 								$title
 							</header>
