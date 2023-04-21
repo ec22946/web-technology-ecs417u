@@ -129,7 +129,7 @@
 			<?php
 				print_r($retrieved_titles);
 				print_r($retrieved_content);
-				for($i = 0; $i < count($retrieved_titles); $i++)
+				for($i = 0; $i < 3; $i++)
 				{
 					$title = $retrieved_titles[$i];
 					$content = $retrieved_content[$i];
