@@ -93,7 +93,7 @@
 			</header>
 		</hgroup>
 		
-		<article>
+		<article id="blog_content">
 			<section>
 				<p id="add_entry_button">
 					<?php
@@ -114,13 +114,23 @@
 				"
 					<section>
 						<header>
-							$retrieved_titles
+							Temp title 1
 						</header>
 						<p>
-							$retrieved_content
+							sample text 1
+						</p>
+					</section>
+					<section>
+						<header>
+							Temp title 2
+						</header>
+						<p>
+							sample text 2
 						</p>
 					</section>
 				";
+				print_r($retrieved_titles);
+				print_r($retrieved_content);
 			?>	
 		</article>
 	</body>
