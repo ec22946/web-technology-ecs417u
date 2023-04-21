@@ -30,8 +30,8 @@
 				die("Connection failed: " . $conn->connect_error);
 			}
 			
-			if ($_SERVER['REQUEST_METHOD'] === 'POST')
-			{
+			//if ($_SERVER['REQUEST_METHOD'] === 'POST')
+			//{
 				$sql = "SELECT title FROM BLOG";
 				
 				//if ($conn->query($sql) === TRUE)
@@ -69,8 +69,8 @@
 				die("Connection failed: " . $conn->connect_error);
 			}
 			
-			if ($_SERVER['REQUEST_METHOD'] === 'POST')
-			{
+			//if ($_SERVER['REQUEST_METHOD'] === 'POST')
+			//{
 				$sql = "SELECT content FROM BLOG";
 				
 				//if ($conn->query($sql) === TRUE)
@@ -92,7 +92,7 @@
 				}
 				**/
 				$conn->close();
-			}
+			//}
 		?>
 		
 		<hgroup id="top_header">
