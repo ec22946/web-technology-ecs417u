@@ -32,7 +32,7 @@
 			
 			if ($_SERVER['REQUEST_METHOD'] === 'POST')
 			{
-				$sql = "SELECT title, content FROM BLOG";
+				$sql = "SELECT title FROM BLOG";
 				
 				//if ($conn->query($sql) === TRUE)
 				//{								
@@ -40,7 +40,41 @@
 					//$retrieved_passwords = $result->fetch_array()[0] ?? '';
 					
 					$result = mysqli_query($conn, $sql);
-					$retrieved_title_content = mysqli_fetch_row($result);
+					$retrieved_titles = mysqli_fetch_array($result);
+				/**
+				}
+				else
+				{
+					echo "Error: " . $sql . "<br>" . $conn->error;
+				}
+				**/
+				$conn->close();
+			}
+		?>
+		<?php
+			$dbhost = getenv("MYSQL_SERVICE_HOST");
+			$dbport = getenv("MYSQL_SERVICE_PORT");
+			$dbuser = getenv("DATABASE_USER");
+			$dbpwd = getenv("DATABASE_PASSWORD");
+			$dbname = getenv("DATABASE_NAME");
+			
+			$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+			if ($conn->connect_error)
+			{
+				die("Connection failed: " . $conn->connect_error);
+			}
+			
+			if ($_SERVER['REQUEST_METHOD'] === 'POST')
+			{
+				$sql = "SELECT content FROM BLOG";
+				
+				//if ($conn->query($sql) === TRUE)
+				//{								
+					//$result = $conn->query($sql);
+					//$retrieved_passwords = $result->fetch_array()[0] ?? '';
+					
+					$result = mysqli_query($conn, $sql);
+					$retrieved_content = mysqli_fetch_array($result);
 				/**
 				}
 				else
@@ -59,42 +93,47 @@
 			</header>
 		</hgroup>
 		
-		<div id="add_entry_button">
-			<?php
-				if($_SESSION['authenticated'] == TRUE)
-				{
-					echo
-					'
-						<a href="addEntry.php">
-							➕
-						</a>
-					';
-				}
-			?>
-		</div>
-		
 		<article id="blog_content">
+			<section>
+				<p id="add_entry_button">
+					<?php
+						if($_SESSION['authenticated'] == TRUE)
+						{
+							echo
+							'
+								<a href="addEntry.php">
+									➕
+								</a>
+							';
+						}
+					?>
+				</p>
+			</section>
 			<?php
-				echo
-				"
-					<section>
-						<header>
-							Temp title 1
-						</header>
-						<p>
-							sample text 1
-						</p>
-					</section>
-					<section>
-						<header>
-							Temp title 2
-						</header>
-						<p>
-							sample text 2
-						</p>
-					</section>
-				";
-				print_r($retrieved_title_content);
+				for($i = 0; $i < count($retrieved_titles); $i++)
+				{
+					$title = $retrieved_titles[$i];
+					$content = $retrieved_content[$i];
+					echo
+					"
+						<section>
+							<header>
+								Temp title 1
+							</header>
+							<p>
+								sample text 1
+							</p>
+						</section>
+						<section>
+							<header>
+								$title
+							</header>
+							<p>
+								$content
+							</p>
+						</section>
+					";
+				}
 			?>	
 		</article>
 	</body>
