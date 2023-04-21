@@ -119,7 +119,8 @@
 				</p>
 			</section>
 			
-			<?php if (!empty($retrieved_titles)) {echo "empty retrieved_titles";}if (!empty($retrieved_content)) {echo "empty retrieved_content";}
+			<?php
+				foreach ($retrieved_titles as $title) { echo $title;}
 				for($i = 0; $i < count($retrieved_titles); $i++)
 				{
 					$title = $retrieved_titles[$i];
