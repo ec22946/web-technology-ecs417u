@@ -43,7 +43,6 @@
 			$conn->close();
 			}
 			
-			$referrer = $_SERVER['HTTP_REFERER'];
 			echo
 			"
 				<script type='text/javascript'>

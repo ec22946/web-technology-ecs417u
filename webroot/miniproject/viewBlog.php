@@ -81,7 +81,7 @@
 			?>
 		</p>
 		
-		<article>
+		<article id="blog_content">
 			<?php
 				
 				for($i = 1; $i < count($retrieved_titles); $i++)
@@ -91,7 +91,7 @@
 					$datetime = $retrieved_datetimes[$i];
 					echo
 					"
-						<section class='blog_content'>
+						<section>
 							<header>
 								$title
 							</header>
