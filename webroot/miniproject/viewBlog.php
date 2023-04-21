@@ -102,24 +102,22 @@
 			</header>
 		</hgroup>
 		
-		<article>
+		<p id="add_entry_button">
+			<?php
+				if($_SESSION['authenticated'] == TRUE)
+				{
+					echo
+					'
+						<a href="addEntry.php">
+							➕
+						</a>
+					';
+				}
+			?>
+		</p>
+		
+		<article id="blog_content">
 			<section>
-				<p id="add_entry_button">
-					<?php
-						if($_SESSION['authenticated'] == TRUE)
-						{
-							echo
-							'
-								<a href="addEntry.php">
-									➕
-								</a>
-							';
-						}
-					?>
-				</p>
-			</section>
-			
-			<section class='blog_content'>
 				<header>
 					Temp title 1
 				</header>
@@ -129,13 +127,15 @@
 			</section>
 			
 			<?php
+				print_r($retrieved_titles);
+				print_r($retrieved_content);
 				for($i = 0; $i < count($retrieved_titles); $i++)
 				{
 					$title = $retrieved_titles[$i];
 					$content = $retrieved_content[$i];
 					echo
 					"
-						<section class='blog_content'>
+						<section>
 							<header>
 								$title
 							</header>
