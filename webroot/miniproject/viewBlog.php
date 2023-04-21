@@ -137,10 +137,10 @@
 					"
 						<section>
 							<header>
-								$title
+								$i title
 							</header>
 							<p>
-								$content
+								$i content
 							</p>
 						</section>
 					";
